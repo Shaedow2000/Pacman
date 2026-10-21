@@ -17,14 +17,18 @@ func _physics_process(delta: float) -> void:
 	if direction == "up":
 		velocity.y = -SPEED * delta
 		velocity.x = 0
+		$AnimatedSprite2D.rotation = -PI/2
 	if direction == "down":
 		velocity.y = SPEED * delta
 		velocity.x = 0
+		$AnimatedSprite2D.rotation = PI/2
 	if direction == "right":
 		velocity.x = SPEED * delta
 		velocity.y = 0
+		$AnimatedSprite2D.rotation = 0
 	if direction == "left":
 		velocity.x = -SPEED * delta
 		velocity.y = 0
+		$AnimatedSprite2D.rotation = PI
 
 	move_and_slide()
