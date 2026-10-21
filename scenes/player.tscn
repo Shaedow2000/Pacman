@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://41u6sb05iwsn"]
 
 [ext_resource type="Texture2D" uid="uid://d2dfdujden4ht" path="res://assets/sprites.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://dl1mgcda4bxux" path="res://scripts/player.gd" id="1_g2els"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_irq48"]
 
@@ -62,6 +63,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=2110513805]
+script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1257700398]
 shape = SubResource("CircleShape2D_irq48")
@@ -70,4 +72,5 @@ shape = SubResource("CircleShape2D_irq48")
 position = Vector2(1, -1)
 scale = Vector2(1.35, 1.35)
 sprite_frames = SubResource("SpriteFrames_irq48")
-frame_progress = 0.5223523
+autoplay = "default"
+frame_progress = 0.83476865
