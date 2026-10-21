@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bfv414kfdjofr"]
 
+[ext_resource type="Script" uid="uid://h6sbxgtwxi28" path="res://scripts/points.gd" id="1_fug4t"]
 [ext_resource type="Texture2D" uid="uid://d2dfdujden4ht" path="res://assets/sprites.png" id="1_qq43p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_irq48"]
@@ -21,6 +22,7 @@ animations = [{
 }]
 
 [node name="Points" type="Area2D" unique_id=826818106]
+script = ExtResource("1_fug4t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1804823674]
 shape = SubResource("CircleShape2D_irq48")
