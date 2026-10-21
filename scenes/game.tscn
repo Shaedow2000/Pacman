@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bx1p3eqcwu45a"]
 
 [ext_resource type="Texture2D" uid="uid://d2dfdujden4ht" path="res://assets/sprites.png" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://bfv414kfdjofr" path="res://scenes/points.tscn" id="2_yqjtg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
 texture = ExtResource("1_uwrxv")
@@ -22,8 +23,10 @@ texture = ExtResource("1_uwrxv")
 2:1/1 = 1
 2:1/1/flip_v = true
 2:1/1/transpose = true
+2:1/1/physics_layer_0/polygon_0/points = PackedVector2Array(1.9850626, 8, -2.0438786, 8, -1.9703579, -8, 2.0291748, -8)
 2:1/2 = 2
 2:1/2/transpose = true
+2:1/2/physics_layer_0/polygon_0/points = PackedVector2Array(1.9850626, 8, -2.0438786, 8, -1.9703579, -8, 2.0291748, -8)
 3:1/next_alternative_id = 4
 3:1/0 = 0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.978445, -8, 2.0839462, -2.0839462, 8, -2.0976357, 8, 1.9298239, -1.9298248, 2.013729, -1.8459191, -8)
@@ -63,12 +66,140 @@ tile_set = SubResource("TileSet_irq48")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -89.0
-offset_top = -61.0
-offset_right = -89.0
-offset_bottom = -61.0
+offset_left = -240.0
+offset_top = -89.0
+offset_right = -240.0
+offset_bottom = -89.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0, 0, 0, 1)
+
+[node name="PointsContainer" type="Node2D" parent="." unique_id=1400774468]
+
+[node name="Points" parent="PointsContainer" unique_id=826818106 instance=ExtResource("2_yqjtg")]
+position = Vector2(248, 154)
+
+[node name="Points2" parent="PointsContainer" unique_id=1365218237 instance=ExtResource("2_yqjtg")]
+position = Vector2(315, 155)
+
+[node name="Points3" parent="PointsContainer" unique_id=925458765 instance=ExtResource("2_yqjtg")]
+position = Vector2(314, 185)
+
+[node name="Points4" parent="PointsContainer" unique_id=146069584 instance=ExtResource("2_yqjtg")]
+position = Vector2(283, 155)
+
+[node name="Points14" parent="PointsContainer" unique_id=2060213125 instance=ExtResource("2_yqjtg")]
+position = Vector2(23, 153)
+
+[node name="Points15" parent="PointsContainer" unique_id=1345229306 instance=ExtResource("2_yqjtg")]
+position = Vector2(90, 154)
+
+[node name="Points16" parent="PointsContainer" unique_id=1127224287 instance=ExtResource("2_yqjtg")]
+position = Vector2(58, 154)
+
+[node name="Points6" parent="PointsContainer" unique_id=1928549299 instance=ExtResource("2_yqjtg")]
+position = Vector2(188, 184)
+
+[node name="Points7" parent="PointsContainer" unique_id=1202007750 instance=ExtResource("2_yqjtg")]
+position = Vector2(255, 185)
+
+[node name="Points8" parent="PointsContainer" unique_id=931565680 instance=ExtResource("2_yqjtg")]
+position = Vector2(223, 185)
+
+[node name="Points5" parent="PointsContainer" unique_id=1538830205 instance=ExtResource("2_yqjtg")]
+position = Vector2(284, 185)
+
+[node name="Points9" parent="PointsContainer" unique_id=304443903 instance=ExtResource("2_yqjtg")]
+position = Vector2(149, 186)
+
+[node name="Points10" parent="PointsContainer" unique_id=60397521 instance=ExtResource("2_yqjtg")]
+position = Vector2(23, 185)
+
+[node name="Points11" parent="PointsContainer" unique_id=500818181 instance=ExtResource("2_yqjtg")]
+position = Vector2(90, 186)
+
+[node name="Points12" parent="PointsContainer" unique_id=525336141 instance=ExtResource("2_yqjtg")]
+position = Vector2(58, 186)
+
+[node name="Points13" parent="PointsContainer" unique_id=1988059392 instance=ExtResource("2_yqjtg")]
+position = Vector2(119, 186)
+
+[node name="Points17" parent="PointsContainer" unique_id=594935746 instance=ExtResource("2_yqjtg")]
+position = Vector2(250, 25)
+
+[node name="Points18" parent="PointsContainer" unique_id=1220315482 instance=ExtResource("2_yqjtg")]
+position = Vector2(317, 26)
+
+[node name="Points19" parent="PointsContainer" unique_id=897757393 instance=ExtResource("2_yqjtg")]
+position = Vector2(316, 56)
+
+[node name="Points37" parent="PointsContainer" unique_id=1286606577 instance=ExtResource("2_yqjtg")]
+position = Vector2(218, 84)
+
+[node name="Points38" parent="PointsContainer" unique_id=978688322 instance=ExtResource("2_yqjtg")]
+position = Vector2(217, 114)
+
+[node name="Points39" parent="PointsContainer" unique_id=1506230817 instance=ExtResource("2_yqjtg")]
+position = Vector2(118, 84)
+
+[node name="Points40" parent="PointsContainer" unique_id=709447338 instance=ExtResource("2_yqjtg")]
+position = Vector2(117, 114)
+
+[node name="Points42" parent="PointsContainer" unique_id=1284330390 instance=ExtResource("2_yqjtg")]
+position = Vector2(42, 102)
+
+[node name="Points43" parent="PointsContainer" unique_id=252640530 instance=ExtResource("2_yqjtg")]
+position = Vector2(291, 105)
+
+[node name="Points20" parent="PointsContainer" unique_id=12836167 instance=ExtResource("2_yqjtg")]
+position = Vector2(285, 26)
+
+[node name="Points21" parent="PointsContainer" unique_id=806242986 instance=ExtResource("2_yqjtg")]
+position = Vector2(25, 24)
+
+[node name="Points22" parent="PointsContainer" unique_id=1499420069 instance=ExtResource("2_yqjtg")]
+position = Vector2(92, 25)
+
+[node name="Points23" parent="PointsContainer" unique_id=897767207 instance=ExtResource("2_yqjtg")]
+position = Vector2(60, 25)
+
+[node name="Points24" parent="PointsContainer" unique_id=1190966883 instance=ExtResource("2_yqjtg")]
+position = Vector2(190, 55)
+
+[node name="Points25" parent="PointsContainer" unique_id=1174759769 instance=ExtResource("2_yqjtg")]
+position = Vector2(257, 56)
+
+[node name="Points26" parent="PointsContainer" unique_id=748930336 instance=ExtResource("2_yqjtg")]
+position = Vector2(225, 56)
+
+[node name="Points27" parent="PointsContainer" unique_id=1619917617 instance=ExtResource("2_yqjtg")]
+position = Vector2(286, 56)
+
+[node name="Points28" parent="PointsContainer" unique_id=1625991919 instance=ExtResource("2_yqjtg")]
+position = Vector2(151, 57)
+
+[node name="Points29" parent="PointsContainer" unique_id=724528055 instance=ExtResource("2_yqjtg")]
+position = Vector2(25, 56)
+
+[node name="Points30" parent="PointsContainer" unique_id=1515658960 instance=ExtResource("2_yqjtg")]
+position = Vector2(92, 57)
+
+[node name="Points31" parent="PointsContainer" unique_id=2035211333 instance=ExtResource("2_yqjtg")]
+position = Vector2(60, 57)
+
+[node name="Points32" parent="PointsContainer" unique_id=356748887 instance=ExtResource("2_yqjtg")]
+position = Vector2(121, 57)
+
+[node name="Points33" parent="PointsContainer" unique_id=2101757623 instance=ExtResource("2_yqjtg")]
+position = Vector2(151, 24)
+
+[node name="Points34" parent="PointsContainer" unique_id=1371870010 instance=ExtResource("2_yqjtg")]
+position = Vector2(121, 24)
+
+[node name="Points35" parent="PointsContainer" unique_id=1650667126 instance=ExtResource("2_yqjtg")]
+position = Vector2(222, 23)
+
+[node name="Points36" parent="PointsContainer" unique_id=690625765 instance=ExtResource("2_yqjtg")]
+position = Vector2(192, 23)
