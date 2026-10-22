@@ -29,10 +29,10 @@ script = ExtResource("1_ajkrh")
 [node name="Phantom1Area" type="Area2D" parent="." unique_id=1379811510]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Phantom1Area" unique_id=737193670]
+scale = Vector2(0.8, 0.8)
 shape = SubResource("CapsuleShape2D_irq48")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1309877992]
-scale = Vector2(0.98, 0.98)
 shape = SubResource("CapsuleShape2D_c044d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1406587921]
