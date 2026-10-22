@@ -42,4 +42,8 @@ sprite_frames = SubResource("SpriteFrames_irq48")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1003063780]
 
+[node name="Timer" type="Timer" parent="." unique_id=1100791]
+wait_time = 2.0
+autostart = true
+
 [connection signal="body_entered" from="Phantom1Area" to="." method="_on_phantom_1_area_body_entered"]
