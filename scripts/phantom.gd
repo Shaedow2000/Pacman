@@ -34,10 +34,8 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		return 
 
-	if personality == 0 and not $NavigationAgent2D.is_navigation_finished():
+	if not $NavigationAgent2D.is_navigation_finished():
 		var map = $NavigationAgent2D.get_navigation_map()
-		print("phantom to mesh: ", NavigationServer2D.map_get_closest_point(map, global_position).distance_to(global_position))
-		print("target to mesh: ", NavigationServer2D.map_get_closest_point(map, player.global_position).distance_to(player.global_position))
 		var next_position = $NavigationAgent2D.get_next_path_position()
 		var direction = global_position.direction_to(next_position)
 		velocity = SPEED * direction
