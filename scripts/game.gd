@@ -17,3 +17,7 @@ func start_game() -> void:
 func stop_game() -> void:
 	game_start = false
 	get_tree().reload_current_scene()
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("stop_game"):
+		stop_game()
