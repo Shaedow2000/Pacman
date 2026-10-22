@@ -40,4 +40,21 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 24
 text = "Start Game"
 
+[node name="ExitGame" type="Button" parent="." unique_id=1554472862]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = 32.0
+offset_right = 26.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Exit
+"
+
 [connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="ExitGame" to="." method="_on_exit_game_pressed"]
