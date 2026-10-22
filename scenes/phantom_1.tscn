@@ -26,7 +26,7 @@ animations = [{
 scale = Vector2(0.65, 0.65)
 motion_mode = 1
 script = ExtResource("1_ajkrh")
-SPEED = 60.0
+SPEED = 50.0
 
 [node name="Phantom1Area" type="Area2D" parent="." unique_id=1379811510]
 
