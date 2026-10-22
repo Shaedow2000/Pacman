@@ -40,4 +40,6 @@ position = Vector2(0, -0.8)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_irq48")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1003063780]
+
 [connection signal="body_entered" from="Phantom1Area" to="." method="_on_phantom_1_area_body_entered"]
