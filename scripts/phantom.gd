@@ -65,11 +65,11 @@ func _on_phantom_4_area_body_entered(body: Node2D) -> void:
 		
 func get_target() -> Vector2:
 	var chaser_target: Vector2 = player.global_position
-	var flanker_target: Vector2 = player.global_position + player.velocity.normalized() * 100
+	var ambusher_target: Vector2 = player.global_position + player.velocity.normalized() * 100
 	
 	match personality:
 		0: return chaser_target
-		3: return flanker_target
+		3: return ambusher_target
 		
 	return player.global_position
 
