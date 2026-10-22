@@ -13,6 +13,7 @@ var score: int = 0
 
 func _ready() -> void:
 	add_to_group("player")
+	velocity = Vector2.RIGHT
 
 func _physics_process(delta: float) -> void:
 	if not game.is_game_started():
