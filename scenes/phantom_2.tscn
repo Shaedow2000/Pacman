@@ -26,7 +26,9 @@ animations = [{
 
 [node name="Phantom2" type="CharacterBody2D" unique_id=1224485043]
 scale = Vector2(0.75, 0.75)
+motion_mode = 1
 script = ExtResource("1_de3ho")
+SPEED = 90.0
 
 [node name="Phantom2Area" type="Area2D" parent="." unique_id=1379811510]
 
@@ -43,6 +45,7 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_irq48")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1395971577]
+navigation_layers = 2
 
 [node name="Timer" type="Timer" parent="." unique_id=1414106573]
 wait_time = 2.0
