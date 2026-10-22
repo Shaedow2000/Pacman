@@ -64,10 +64,14 @@ func _on_phantom_4_area_body_entered(body: Node2D) -> void:
 		game_over()
 		
 func get_target() -> Vector2:
+	var chaser_target: Vector2 = player.global_position
+	var flanker_target: Vector2 = player.global_position + player.velocity.normalized() * 100
+	
 	match personality:
-		0: return player.global_position
+		0: return chaser_target
+		3: return flanker_target
 		
 	return player.global_position
 
 func _on_timer_timeout() -> void:
-	$NavigationAgent2D.target_position = player.global_position
+	$NavigationAgent2D.target_position = get_target()
