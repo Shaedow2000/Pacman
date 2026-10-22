@@ -47,3 +47,4 @@ wait_time = 2.0
 autostart = true
 
 [connection signal="body_entered" from="Phantom1Area" to="." method="_on_phantom_1_area_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
