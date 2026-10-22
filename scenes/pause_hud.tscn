@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://bodc4lqp0suwu"]
 
+[ext_resource type="Script" uid="uid://c6pg0ydpd54wl" path="res://scripts/pause_hud.gd" id="1_dljab"]
+
 [node name="PauseHUD" type="CanvasLayer" unique_id=1375509164]
+script = ExtResource("1_dljab")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1470080599]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.61960787)
 
 [node name="Label" type="Label" parent="." unique_id=979688805]
 z_index = 20
@@ -15,33 +26,16 @@ theme_override_font_sizes/font_size = 64
 text = "Paused..."
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="." unique_id=391175347]
-z_index = 20
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
+[node name="Continue" type="Button" parent="." unique_id=904214903]
+z_index = 30
+anchors_preset = -1
+anchor_left = 0.45100003
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.45100003
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -25.0
-offset_right = 100.0
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-
-[node name="Continue" type="Button" parent="Control" unique_id=904214903]
-z_index = 20
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -122.0
+offset_left = -55.552063
 offset_top = -21.0
-offset_right = -8.0
+offset_right = 58.447937
 offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -50,17 +44,16 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 24
 text = "Continue"
 
-[node name="Exit" type="Button" parent="Control" unique_id=1884483335]
-z_index = 20
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+[node name="Exit" type="Button" parent="." unique_id=1884483335]
+z_index = 30
+anchors_preset = -1
+anchor_left = 0.537
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.537
 anchor_bottom = 0.5
-offset_left = 16.0
+offset_left = -31.624023
 offset_top = -22.0
-offset_right = 74.0
+offset_right = 26.375977
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -69,10 +62,5 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 24
 text = "Quit"
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1470080599]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.61960787)
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
