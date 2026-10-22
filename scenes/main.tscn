@@ -1,17 +1,18 @@
 [gd_scene format=3 uid="uid://cfos02bg8wtkl"]
 
 [ext_resource type="PackedScene" uid="uid://bx1p3eqcwu45a" path="res://scenes/game.tscn" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://bgtj6gym1mgmp" path="res://scenes/score.tscn" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bgtj6gym1mgmp" path="res://scenes/score_label.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://41u6sb05iwsn" path="res://scenes/player.tscn" id="2_sugp2"]
 
 [node name="Main" type="Node" unique_id=270716710]
 
-[node name="Score" parent="." unique_id=270283582 instance=ExtResource("1_sugp2")]
-
 [node name="Game" parent="." unique_id=777476756 instance=ExtResource("1_0wfyh")]
 
-[node name="Player" parent="." unique_id=2110513805 instance=ExtResource("2_sugp2")]
+[node name="ScoreLabel" parent="." unique_id=270283582 instance=ExtResource("2_jyhfs")]
+
+[node name="Player" parent="." unique_id=2110513805 node_paths=PackedStringArray("score_label") instance=ExtResource("2_sugp2")]
 position = Vector2(169, 153)
+score_label = NodePath("../ScoreLabel")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=498192575]
 position = Vector2(168, 104)
