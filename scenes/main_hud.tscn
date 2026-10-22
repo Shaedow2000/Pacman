@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://d3rgg2o7trxuu"]
 
+[ext_resource type="Script" uid="uid://d2aotlk0k20kq" path="res://scripts/main_hud.gd" id="1_s614x"]
+
 [node name="MainHUD" type="CanvasLayer" unique_id=882951784]
+script = ExtResource("1_s614x")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1551341127]
 anchors_preset = 15
@@ -36,3 +39,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 24
 text = "Start Game"
+
+[connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]

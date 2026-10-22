@@ -4,21 +4,28 @@
 [ext_resource type="PackedScene" uid="uid://bgtj6gym1mgmp" path="res://scenes/score_label.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://41u6sb05iwsn" path="res://scenes/player.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bgdhlcx8kc65a" path="res://scenes/win_hud.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://d3rgg2o7trxuu" path="res://scenes/main_hud.tscn" id="3_tefeu"]
 [ext_resource type="Script" uid="uid://dsbx182q1asq6" path="res://scripts/win_hud.gd" id="4_tbgi4"]
 
 [node name="Main" type="Node" unique_id=270716710]
 
-[node name="Game" parent="." unique_id=777476756 instance=ExtResource("1_0wfyh")]
+[node name="MainHUD" parent="." unique_id=882951784 node_paths=PackedStringArray("game") instance=ExtResource("3_tefeu")]
+game = NodePath("../Game")
+
+[node name="Game" parent="." unique_id=777476756 node_paths=PackedStringArray("score_label", "main_hud") instance=ExtResource("1_0wfyh")]
+score_label = NodePath("../ScoreLabel")
+main_hud = NodePath("../MainHUD")
 
 [node name="ScoreLabel" parent="." unique_id=270283582 instance=ExtResource("2_jyhfs")]
 
 [node name="WinHUD" parent="." unique_id=694569332 instance=ExtResource("3_jyhfs")]
 script = ExtResource("4_tbgi4")
 
-[node name="Player" parent="." unique_id=2110513805 node_paths=PackedStringArray("score_label", "win_hud") instance=ExtResource("2_sugp2")]
+[node name="Player" parent="." unique_id=2110513805 node_paths=PackedStringArray("score_label", "win_hud", "game") instance=ExtResource("2_sugp2")]
 position = Vector2(169, 153)
 score_label = NodePath("../ScoreLabel")
 win_hud = NodePath("../WinHUD")
+game = NodePath("../Game")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=498192575]
 position = Vector2(168, 104)
