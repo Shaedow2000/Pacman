@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bgtj6gym1mgmp"]
+
+[node name="Score" type="CanvasLayer" unique_id=270283582]
+
+[node name="Label" type="Label" parent="." unique_id=1971740929]
+offset_right = 120.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 24
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
