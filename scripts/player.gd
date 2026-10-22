@@ -7,10 +7,16 @@ const SPEED: int = 3000.0
 var direction: String
 var score: int = 0
 
+@export var game_start: bool = false
+
 func _ready() -> void:
 	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
+	if not game_start:
+		velocity = Vector2.ZERO
+		return
+
 	if Input.is_action_just_pressed("move_up"):
 		direction = "up"
 	if Input.is_action_just_pressed("move_down"):
