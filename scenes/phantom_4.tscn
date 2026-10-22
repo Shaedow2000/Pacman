@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d3up6pendxk3n"]
 
 [ext_resource type="Texture2D" uid="uid://d2dfdujden4ht" path="res://assets/sprites.png" id="1_d3o7o"]
+[ext_resource type="Script" uid="uid://dlf2hqxsktdu2" path="res://scripts/phantom.gd" id="1_k18qt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_irq48"]
 
@@ -25,10 +26,11 @@ animations = [{
 
 [node name="Phantom4" type="CharacterBody2D" unique_id=1224485043]
 scale = Vector2(0.75, 0.75)
+script = ExtResource("1_k18qt")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1379811510]
+[node name="Phantom4Area" type="Area2D" parent="." unique_id=1379811510]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=737193670]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phantom4Area" unique_id=737193670]
 shape = SubResource("CapsuleShape2D_irq48")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1309877992]
@@ -39,3 +41,5 @@ shape = SubResource("CapsuleShape2D_c044d")
 position = Vector2(0, -0.8)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_irq48")
+
+[connection signal="body_entered" from="Phantom4Area" to="." method="_on_phantom_4_area_body_entered"]
