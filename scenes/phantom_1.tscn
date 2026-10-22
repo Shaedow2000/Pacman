@@ -46,7 +46,7 @@ sprite_frames = SubResource("SpriteFrames_irq48")
 navigation_layers = 2
 
 [node name="Timer" type="Timer" parent="." unique_id=1100791]
-wait_time = 2.0
+wait_time = 0.75
 autostart = true
 
 [connection signal="body_entered" from="Phantom1Area" to="." method="_on_phantom_1_area_body_entered"]
