@@ -9,13 +9,12 @@ var direction: String
 var score: int = 0
 
 @export var game: Node
-@onready var game_start: bool = game.game_start
 
 func _ready() -> void:
 	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
-	if not game_start:
+	if not game.is_game_started():
 		velocity = Vector2.ZERO
 		return
 
@@ -53,4 +52,3 @@ func increment_score() -> void:
 	
 	if score == 42:
 		win_hud.show_win_screen()
-		game.stop_game()
