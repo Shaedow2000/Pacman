@@ -62,7 +62,8 @@ texture = ExtResource("1_uwrxv")
 0:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_irq48"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
 custom_data_layer_0/name = "is_wall"
 custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_yqjtg")
@@ -226,15 +227,23 @@ position = Vector2(192, 23)
 
 [node name="Phantom1" parent="Phantoms" unique_id=2095904534 instance=ExtResource("4_u5sy4")]
 position = Vector2(175, 87)
+collision_layer = 4
+collision_mask = 2
 
 [node name="Phantom2" parent="Phantoms" unique_id=1459494895 instance=ExtResource("5_gee14")]
 position = Vector2(146, 87)
+collision_layer = 4
+collision_mask = 2
 personality = 1
 
 [node name="Phantom3" parent="Phantoms" unique_id=1620680213 instance=ExtResource("6_0tnpc")]
 position = Vector2(190, 87)
+collision_layer = 4
+collision_mask = 2
 personality = 2
 
 [node name="Phantom4" parent="Phantoms" unique_id=1440131194 instance=ExtResource("7_vtaks")]
 position = Vector2(162, 87)
+collision_layer = 4
+collision_mask = 2
 personality = 3
