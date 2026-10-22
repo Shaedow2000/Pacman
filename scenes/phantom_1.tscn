@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dowa3btdufqh8"]
+
+[ext_resource type="Texture2D" uid="uid://d2dfdujden4ht" path="res://assets/sprites.png" id="1_5wrnp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_irq48"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c044d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wrnp"]
+atlas = ExtResource("1_5wrnp")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_irq48"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wrnp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Phantom1" type="CharacterBody2D" unique_id=1224485043]
+scale = Vector2(0.75, 0.75)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1379811510]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=737193670]
+shape = SubResource("CapsuleShape2D_irq48")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1309877992]
+scale = Vector2(0.98, 0.98)
+shape = SubResource("CapsuleShape2D_c044d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1406587921]
+position = Vector2(0, -0.8)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_irq48")
