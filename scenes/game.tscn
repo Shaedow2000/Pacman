@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://cgynq1fayqvdd" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://d2dfdujden4ht" path="res://assets/sprites.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://bfv414kfdjofr" path="res://scenes/points.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://dowa3btdufqh8" path="res://scenes/phantom_1.tscn" id="4_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://cha3ucdfg4u2w" path="res://scenes/phantom_2.tscn" id="5_gee14"]
+[ext_resource type="PackedScene" uid="uid://bglofs7b5njxf" path="res://scenes/phantom_3.tscn" id="6_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://d3up6pendxk3n" path="res://scenes/phantom_4.tscn" id="7_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
 texture = ExtResource("1_uwrxv")
@@ -205,3 +209,17 @@ position = Vector2(222, 23)
 
 [node name="Points36" parent="PointsContainer" unique_id=690625765 instance=ExtResource("2_yqjtg")]
 position = Vector2(192, 23)
+
+[node name="Phantoms" type="Node2D" parent="." unique_id=59858960]
+
+[node name="Phantom1" parent="Phantoms" unique_id=2095904534 instance=ExtResource("4_u5sy4")]
+position = Vector2(161, 87)
+
+[node name="Phantom2" parent="Phantoms" unique_id=1459494895 instance=ExtResource("5_gee14")]
+position = Vector2(148, 87)
+
+[node name="Phantom3" parent="Phantoms" unique_id=1620680213 instance=ExtResource("6_0tnpc")]
+position = Vector2(186, 87)
+
+[node name="Phantom4" parent="Phantoms" unique_id=1440131194 instance=ExtResource("7_vtaks")]
+position = Vector2(174, 88)
