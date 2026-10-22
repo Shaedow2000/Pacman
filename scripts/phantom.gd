@@ -1,28 +1,50 @@
 extends CharacterBody2D
 
-const SPEED: float = 1000.0
+@export var SPEED: float
 
-@onready var borders: TileMapLayer = $"../../Borders"
-@onready var game_map: TileMapLayer = $"../../GameMap"
+@onready var borders: TileMapLayer = $"../../NavigationRegion2D/Borders"
+@onready var game_map: TileMapLayer = $"../../NavigationRegion2D/GameMap"
 
 @export var personality: int
 
 var game
+@onready var player: CharacterBody2D = $"../../../Player"
+
+var tile0: Vector2
 
 func _ready() -> void:
 	add_to_group("phantom")
 	game = $"../../"
+	await get_tree().physics_frame
+	$NavigationAgent2D.target_position = player.global_position
 	
 func is_wall(cell: Vector2i) -> bool:
 	var dataMap = game_map.get_cell_tile_data(cell)
 	var dataBorders = borders.get_cell_tile_data(cell)
 	
-	if dataBorders != null and dataMap.get_custom_data("is_wall"):
+	if dataMap != null and dataMap.get_custom_data("is_wall"):
 		return true
-	if dataMap != null and dataBorders.get_custom_data("is_wall"):
+	if dataBorders != null and dataBorders.get_custom_data("is_wall"):
 		return true
 	
 	return false
+	
+func _physics_process(delta: float) -> void:
+	if not game.is_game_started():
+		velocity = Vector2.ZERO
+		return 
+
+	if personality == 0 and not $NavigationAgent2D.is_navigation_finished():
+		var map = $NavigationAgent2D.get_navigation_map()
+		print("phantom to mesh: ", NavigationServer2D.map_get_closest_point(map, global_position).distance_to(global_position))
+		print("target to mesh: ", NavigationServer2D.map_get_closest_point(map, player.global_position).distance_to(player.global_position))
+		var next_position = $NavigationAgent2D.get_next_path_position()
+		var direction = global_position.direction_to(next_position)
+		velocity = SPEED * direction
+	else:
+		velocity = Vector2.ZERO
+		
+	move_and_slide()
 
 func game_over() -> void:
 	game.game_lost()
@@ -42,3 +64,9 @@ func _on_phantom_3_area_body_entered(body: Node2D) -> void:
 func _on_phantom_4_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		game_over()
+
+func _on_timer_timeout() -> void:
+	if personality == 0:
+		$NavigationAgent2D.target_position = player.global_position
+	if personality == 1:
+		$NavigationAgent2D.target_position = player.global_position
