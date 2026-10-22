@@ -29,6 +29,7 @@ scale = Vector2(0.65, 0.65)
 motion_mode = 1
 script = ExtResource("1_2ajgv")
 SPEED = 40.0
+personality = 2
 
 [node name="Phantom3Area" type="Area2D" parent="." unique_id=1379811510]
 
@@ -45,6 +46,8 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_irq48")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1788272995]
+path_desired_distance = 5.0
+target_desired_distance = 4.0
 navigation_layers = 2
 
 [node name="Timer" type="Timer" parent="." unique_id=1715315080]

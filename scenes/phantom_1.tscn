@@ -43,6 +43,8 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_irq48")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1003063780]
+path_desired_distance = 5.0
+target_desired_distance = 4.0
 navigation_layers = 2
 
 [node name="Timer" type="Timer" parent="." unique_id=1100791]
