@@ -3,6 +3,10 @@ extends CharacterBody2D
 const SPEED: int = 3000.0
 
 var direction: String
+var score: int = 0
+
+func _ready() -> void:
+	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("move_up"):
@@ -32,3 +36,9 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.rotation = PI
 
 	move_and_slide()
+	
+func increment_score() -> void:
+	score += 1
+	
+	if score == 42:
+		print("WIN")
