@@ -225,16 +225,16 @@ position = Vector2(192, 23)
 [node name="Phantoms" type="Node2D" parent="." unique_id=59858960]
 
 [node name="Phantom1" parent="Phantoms" unique_id=2095904534 instance=ExtResource("4_u5sy4")]
-position = Vector2(161, 87)
+position = Vector2(175, 87)
 
 [node name="Phantom2" parent="Phantoms" unique_id=1459494895 instance=ExtResource("5_gee14")]
-position = Vector2(148, 87)
+position = Vector2(146, 87)
 personality = 1
 
 [node name="Phantom3" parent="Phantoms" unique_id=1620680213 instance=ExtResource("6_0tnpc")]
-position = Vector2(186, 87)
+position = Vector2(190, 87)
 personality = 2
 
 [node name="Phantom4" parent="Phantoms" unique_id=1440131194 instance=ExtResource("7_vtaks")]
-position = Vector2(174, 88)
+position = Vector2(162, 87)
 personality = 3
