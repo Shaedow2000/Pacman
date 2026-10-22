@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED: int = 3000.0
 
 @export var score_label: CanvasLayer
+@export var win_hud: CanvasLayer
 
 var direction: String
 var score: int = 0
@@ -50,4 +51,5 @@ func increment_score() -> void:
 	score_label.increment_score(score)
 	
 	if score == 42:
-		print("WIN")
+		win_hud.show_win_screen()
+		game_start = false
