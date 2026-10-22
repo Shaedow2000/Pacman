@@ -66,9 +66,18 @@ func _on_phantom_4_area_body_entered(body: Node2D) -> void:
 func get_target() -> Vector2:
 	var chaser_target: Vector2 = player.global_position
 	var ambusher_target: Vector2 = player.global_position + player.velocity.normalized() * 100
+	var shy_target: Vector2
+	
+	var dist: float = global_position.distance_to(player.global_position)
+	print(dist)
+	if dist < 160:
+		shy_target = Vector2(0, 0)
+	else:
+		shy_target = chaser_target
 	
 	match personality:
 		0: return chaser_target
+		2: return shy_target
 		3: return ambusher_target
 		
 	return player.global_position
