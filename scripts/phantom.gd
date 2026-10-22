@@ -62,9 +62,12 @@ func _on_phantom_3_area_body_entered(body: Node2D) -> void:
 func _on_phantom_4_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		game_over()
+		
+func get_target() -> Vector2:
+	match personality:
+		0: return player.global_position
+		
+	return player.global_position
 
 func _on_timer_timeout() -> void:
-	if personality == 0:
-		$NavigationAgent2D.target_position = player.global_position
-	if personality == 1:
-		$NavigationAgent2D.target_position = player.global_position
+	$NavigationAgent2D.target_position = player.global_position
