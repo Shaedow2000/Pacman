@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 const SPEED: int = 3000.0
 
+@export var score_label: CanvasLayer
+
 var direction: String
 var score: int = 0
 
@@ -39,6 +41,7 @@ func _physics_process(delta: float) -> void:
 	
 func increment_score() -> void:
 	score += 1
+	score_label.increment_score(score)
 	
 	if score == 42:
 		print("WIN")
