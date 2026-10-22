@@ -8,6 +8,9 @@ extends Node
 
 func _ready() -> void:
 	score_label.hide()
+	
+func is_game_started() -> bool:
+	return game_start
 
 func start_game() -> void:
 	game_start = true
