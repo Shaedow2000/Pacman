@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bgtj6gym1mgmp"]
 
-[node name="Score" type="CanvasLayer" unique_id=270283582]
+[ext_resource type="Script" uid="uid://dvmskf3quels6" path="res://scripts/score.gd" id="1_8juob"]
+
+[node name="ScoreLabel" type="CanvasLayer" unique_id=270283582]
+script = ExtResource("1_8juob")
 
 [node name="Label" type="Label" parent="." unique_id=1971740929]
 offset_right = 120.0
