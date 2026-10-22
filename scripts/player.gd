@@ -8,7 +8,8 @@ const SPEED: int = 3000.0
 var direction: String
 var score: int = 0
 
-@export var game_start: bool = false
+@export var game: Node
+@onready var game_start: bool = game.game_start
 
 func _ready() -> void:
 	add_to_group("player")
@@ -52,4 +53,4 @@ func increment_score() -> void:
 	
 	if score == 42:
 		win_hud.show_win_screen()
-		game_start = false
+		game.stop_game()
