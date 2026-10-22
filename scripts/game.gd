@@ -5,6 +5,7 @@ extends Node
 
 @export var score_label: CanvasLayer
 @export var main_hud: CanvasLayer
+@export var pause_hud: CanvasLayer
 
 func _ready() -> void:
 	score_label.hide()
@@ -23,10 +24,15 @@ func stop_game() -> void:
 	
 func pause_game() -> void:
 	game_start = false
+	pause_hud.show()
+	
+func continue_game() -> void:
+	game_start = true
+	pause_hud.hide()
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("stop_game"):
 		if not game_start:
-			game_start = true
+			continue_game()
 		else:
 			pause_game()
