@@ -28,7 +28,7 @@ animations = [{
 scale = Vector2(0.65, 0.65)
 motion_mode = 1
 script = ExtResource("1_k18qt")
-SPEED = 40.0
+SPEED = 45.0
 
 [node name="Phantom4Area" type="Area2D" parent="." unique_id=1379811510]
 
