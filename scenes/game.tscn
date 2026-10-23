@@ -262,9 +262,11 @@ tile_set = SubResource("TileSet_irq48")
 
 [node name="CornerModeTimer" type="Timer" parent="." unique_id=435581001]
 wait_time = 5.0
-autostart = true
+one_shot = true
 
 [node name="AttackModeTimer" type="Timer" parent="." unique_id=300480221]
 wait_time = 15.0
+one_shot = true
 
-[connection signal="timeout" from="CornerModeTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="CornerModeTimer" to="." method="_on_corner_mode_timer_timeout"]
+[connection signal="timeout" from="AttackModeTimer" to="." method="_on_attack_mode_timer_timeout"]
