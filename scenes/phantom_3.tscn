@@ -30,7 +30,7 @@ motion_mode = 1
 script = ExtResource("1_2ajgv")
 SPEED = 30.0
 personality = 2
-corner = Vector2(200, 200)
+corner = Vector2(600, 300)
 
 [node name="Phantom3Area" type="Area2D" parent="." unique_id=1379811510]
 
