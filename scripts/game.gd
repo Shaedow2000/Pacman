@@ -2,6 +2,7 @@ class_name Game
 extends Node
 
 @export var game_start: bool = false
+@export var mode = "attack"
 
 @export var score_label: CanvasLayer
 @export var main_hud: CanvasLayer
@@ -43,3 +44,9 @@ func _input(event: InputEvent) -> void:
 			continue_game()
 		else:
 			pause_game()
+
+func _on_timer_timeout() -> void:
+	if mode == "attack":
+		mode = "corner"
+	else: 
+		mode = "attack"
