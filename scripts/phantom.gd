@@ -68,15 +68,28 @@ func get_target() -> Vector2:
 	var ambusher_target: Vector2 = player.global_position + player.velocity.normalized() * 100
 	var shy_target: Vector2
 	
-	var dist: float = global_position.distance_to(player.global_position)
-	print(dist)
-	if dist < 160:
+	var red_phantom: CharacterBody2D = null
+	for phantom in get_tree().get_nodes_in_group("phantom"):
+		if phantom.personality == 0:
+			red_phantom = phantom
+
+	var flanker_target: Vector2 = chaser_target
+
+	if red_phantom != null:
+		var pivot: Vector2 = player.global_position + player.velocity.normalized() * 50
+		var arrow: Vector2 = pivot - red_phantom.global_position
+		flanker_target = red_phantom.global_position + arrow * 2
+	
+	var distance_to_player: float = global_position.distance_to(player.global_position)
+	
+	if distance_to_player < 80:
 		shy_target = Vector2(0, 0)
 	else:
 		shy_target = chaser_target
 	
 	match personality:
 		0: return chaser_target
+		1: return flanker_target
 		2: return shy_target
 		3: return ambusher_target
 		
