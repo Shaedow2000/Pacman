@@ -13,6 +13,7 @@ func _ready() -> void:
 	score_label.hide()
 	pause_hud.hide()
 	game_over.hide()
+	$CornerModeTimer.start()
 	
 func is_game_started() -> bool:
 	return game_start
@@ -45,8 +46,10 @@ func _input(event: InputEvent) -> void:
 		else:
 			pause_game()
 
-func _on_timer_timeout() -> void:
-	if mode == "attack":
-		mode = "corner"
-	else: 
-		mode = "attack"
+func _on_corner_mode_timer_timeout() -> void:
+	mode = "attack"
+	$AttackModeTimer.start()
+
+func _on_attack_mode_timer_timeout() -> void:
+	mode = "corner"
+	$CornerModeTimer.start()
