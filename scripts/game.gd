@@ -2,7 +2,7 @@ class_name Game
 extends Node
 
 @export var game_start: bool = false
-@export var mode = "attack"
+@export var mode = "corner"
 
 @export var score_label: CanvasLayer
 @export var main_hud: CanvasLayer
