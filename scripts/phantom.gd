@@ -6,11 +6,10 @@ extends CharacterBody2D
 @onready var game_map: TileMapLayer = $"../../NavigationRegion2D/GameMap"
 
 @export var personality: int
+@export var corner: Vector2
 
 var game
 @onready var player: CharacterBody2D = $"../../../Player"
-
-var tile0: Vector2
 
 func _ready() -> void:
 	add_to_group("phantom")
@@ -62,7 +61,7 @@ func _on_phantom_3_area_body_entered(body: Node2D) -> void:
 func _on_phantom_4_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		game_over()
-		
+
 func get_target() -> Vector2:
 	var chaser_target: Vector2 = player.global_position
 	var ambusher_target: Vector2 = player.global_position + player.velocity.normalized() * 100
@@ -83,7 +82,7 @@ func get_target() -> Vector2:
 	var distance_to_player: float = global_position.distance_to(player.global_position)
 	
 	if distance_to_player < 80:
-		shy_target = Vector2(0, 0)
+		shy_target = corner
 	else:
 		shy_target = chaser_target
 	
