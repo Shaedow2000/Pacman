@@ -63,6 +63,9 @@ func _on_phantom_4_area_body_entered(body: Node2D) -> void:
 		game_over()
 
 func get_target() -> Vector2:
+	if game.mode == "corner":
+		return corner
+
 	var chaser_target: Vector2 = player.global_position
 	var ambusher_target: Vector2 = player.global_position + player.velocity.normalized() * 100
 	var shy_target: Vector2
